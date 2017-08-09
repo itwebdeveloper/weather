@@ -1,7 +1,8 @@
 <?php
 require_once(__DIR__ .'/../config.php');
 
-function send_request($curl_request_endpoint) {
+function send_request($curl_request_endpoint)
+{
     global $debug, $log_file, $email_addresses;
 
     if (!is_writable($log_file)) {
@@ -105,7 +106,8 @@ function send_request($curl_request_endpoint) {
     }
 }
 
-function insert_result($latitude, $longitude, $summary, $temperature, $units, $icon) {
+function insert_result($latitude, $longitude, $summary, $temperature, $units, $icon)
+{
     global $db_host, $db_user, $db_pass, $db_name, $charset;
 
     try {
@@ -138,4 +140,22 @@ EOF;
     }
 }
 
-send_request($curl_request_endpoint);
+function validateGeo($req_latitude, $req_longitude)
+{
+  return preg_match('/^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?),\s*[-+]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$/', $req_latitude.",".$req_longitude);
+}
+
+if ($argc != 3) {
+    echo "ERROR: You should specify a latitude and longitude\n";
+    die();
+} else {
+    $req_latitude=$argv[1];
+    $req_longitude=$argv[2];
+    if (validateGeo($req_latitude, $req_longitude)) {
+        $curl_request_endpoint = "https://api.darksky.net/forecast/$private_key/$req_latitude,$req_longitude";
+        send_request($curl_request_endpoint);
+    } else {
+        echo "ERROR: You should specify a valid latitude and longitude\n";
+        die();
+    }
+}
