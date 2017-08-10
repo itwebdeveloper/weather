@@ -49,7 +49,8 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-sm-0 col-md-5"></div>
+                    <div class="col-sm-12 col-md-2" id="locations">
                         <ul>
                             <li><a href="current.php?location=London">London</a></li>
                             <li><a href="current.php?location=Paris">Paris</a></li>
@@ -58,6 +59,7 @@
                             <li><a href="current.php?location=Sydney">Sydney</a></li>
                         </ul>
                     </div>
+                    <div class="col-sm-0 col-md-5"></div>
                 </div>
             </div>
         </div><!-- /.container -->

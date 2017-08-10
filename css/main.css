@@ -1,7 +1,16 @@
 body {
     padding-top: 50px;
 }
+
 .starter-template {
     padding: 40px 15px;
     text-align: center;
+}
+
+#locations ul {
+    list-style-type: none;
+}
+
+#locations ul li {
+    text-align: left;
 }
