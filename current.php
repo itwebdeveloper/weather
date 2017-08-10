@@ -62,17 +62,21 @@ EOF;
 }
 
 $city_mapping = array(
-    'London' => '37.8267,-122.4233'
+    'London' => '51.528308,-0.3817812',
+    'Paris' => '48.8588377,2.2770199',
+    'New-York' => '40.6971494,-74.2598712',
+    'Singapore' => '1.3139961,103.7041613',
+    'Sydney' => '-33.847927,150.6517805'
 );
 
-if (isset($_GET['locality'])) {
-    $locality = $_GET['locality'];
+if (isset($_GET['location'])) {
+    $location = $_GET['location'];
 } else {
-    $locality = 'London';
+    $location = 'London';
 }
 
-if (isset($city_mapping[$locality])) {
-    list($latitude, $longitude) = explode(",", $city_mapping[$locality]);
+if (isset($city_mapping[$location])) {
+    list($latitude, $longitude) = explode(",", $city_mapping[$location]);
     $result = getResult($latitude, $longitude);
 
     if(isset($result['units'])) {
@@ -83,7 +87,7 @@ if (isset($city_mapping[$locality])) {
         }
     }
 } else {
-    $errors[] = 'Locality NOT found.';
+    $errors[] = 'location NOT found.';
 }
 ?>
 <!doctype html>
@@ -134,6 +138,7 @@ if (isset($city_mapping[$locality])) {
                     <div class="col-md-12">
                         <h1>Weather App</h1>
                         <h2>Current weather conditions</h2>
+                        <h3><?php echo $location ?></h3>
                     </div>
                 </div>
                 <div class="row">
