@@ -77,6 +77,9 @@ if (isset($_GET['location'])) {
 
 if (isset($city_mapping[$location])) {
     list($latitude, $longitude) = explode(",", $city_mapping[$location]);
+    // Format the number with only 4 decimal digits as accepted by Dark Sky API and DB fields
+    $latitude = number_format($latitude, 4, '.', '');
+    $longitude = number_format($longitude, 4, '.', '');
     $result = getResult($latitude, $longitude);
 
     if(isset($result['units'])) {
