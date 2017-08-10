@@ -1,0 +1,22 @@
+<?php
+ini_set('display_startup_errors', 1);
+ini_set('display_error', 1);
+error_reporting(E_ALL);
+date_default_timezone_set("UTC"); 
+
+/* dark_sky_proxy.php settings START */
+$debug = false; // If true the script prints additional debug lines to video
+$private_key='a258a26fcc8493fc074ecd506b71e636';
+$log_file = "/var/log/dark_sky_proxy/debug.log";
+/* dark_sky_proxy.php settings END */
+
+$email_addresses = "Andrea Cannuni <andreacannuni@gmail.com>";
+
+$db_host = "localhost";
+$db_user = "foouser";
+$db_pass = "abc";
+$db_name = "weather";
+$charset = 'utf8';
+
+$valid_result_ttl = 300; // Consider valid the results retrieved in the last 5 minutes
+$internal_proxy_endpoint = "http://10.0.0.10/weather/scripts/dark_sky_proxy.php";
