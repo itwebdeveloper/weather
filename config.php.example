@@ -17,3 +17,5 @@ $db_user = "foouser";
 $db_pass = "abc";
 $db_name = "weather";
 $charset = 'utf8';
+
+$valid_result_ttl = 300; // Consider valid the results retrieved in the last 5 minutes
