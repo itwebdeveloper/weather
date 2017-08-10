@@ -51,11 +51,11 @@
                 <div class="row">
                     <div class="col-md-12">
                         <ul>
-                            <li><a href="current.php?city=London">London</a></li>
-                            <li><a href="current.php?city=Paris">Paris</a></li>
-                            <li><a href="current.php?city=New-York">New-York</a></li>
-                            <li><a href="current.php?city=Singapore">Singapore</a></li>
-                            <li><a href="current.php?city=Sydney">Sydney</a></li>
+                            <li><a href="current.php?location=London">London</a></li>
+                            <li><a href="current.php?location=Paris">Paris</a></li>
+                            <li><a href="current.php?location=New-York">New-York</a></li>
+                            <li><a href="current.php?location=Singapore">Singapore</a></li>
+                            <li><a href="current.php?location=Sydney">Sydney</a></li>
                         </ul>
                     </div>
                 </div>
