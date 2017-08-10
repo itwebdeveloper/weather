@@ -1,5 +1,9 @@
 <?php
-// I know a monolithic file is wrong but I would like to satisfy the specs and go to bed
+/**
+ * Weather Application
+ *
+ * @package Weather-application
+ */
 
 require_once(__DIR__ .'/config.php');
 
@@ -91,14 +95,14 @@ if (isset($city_mapping[$location])) {
             $temperature_unit = '&deg;F';
         }
     }
+
+    $smarty->assign('location', $location);
+    $smarty->assign('temperature_unit', $temperature_unit);
+    $smarty->assign('result', $result);
 } else {
     $errors[] = 'location NOT found.';
+    $smarty->assign('errors', $errors);
 }
-
-$smarty->assign('location', $location);
-$smarty->assign('temperature_unit', $temperature_unit);
-$smarty->assign('errors', $errors);
-$smarty->assign('result', $result);
 
 $smarty->assign('page', 'current');
 $smarty->display('main'.TEMPLATE_EXT);

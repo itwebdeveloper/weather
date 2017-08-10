@@ -1,5 +1,12 @@
         <div class="container">
             <div class="starter-template">
+            {if isset($errors.0) }
+                <div class="row">
+                    <div class="col-md-12 bg-danger">
+                        Sorry but we were unable to find your location :-(
+                    </div>
+                </div>
+            {else}
                 <div class="row">
                     <div class="col-md-12">
                         <h1>Weather App</h1>
@@ -21,5 +28,6 @@
                         <div><canvas id="icon1" width="128" height="128" data-icon="{$result['icon']}"></canvas></div>
                     </div>
                 </div>
+            {/if}
             </div>
         </div><!-- /.container -->
