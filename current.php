@@ -34,18 +34,24 @@ EOF;
             $stmt = null;
             $db = null;
 
-            // $command = __DIR__ ."/scripts/dark_sky_proxy.php $latitude $longitude > /dev/null &";
-            $command = __DIR__ ."/scripts/dark_sky_proxy.php $latitude $longitude";
-            exec($command);
-            getResult($latitude, $longitude);
+            $endpoint = "http://10.0.0.10/weather/scripts/dark_sky_proxy.php?latitude=$latitude&longitude=$longitude";
+            $api_call_result = file_get_contents($endpoint);
+            $api_call_result_json = json_decode($api_call_result);
+   
+            $result['summary'] = $api_call_result_json->message->summary;
+            $result['temperature'] = $api_call_result_json->message->temperature;
+            $result['units'] = $api_call_result_json->message->units;
+            $result['icon'] = $api_call_result_json->message->icon;
+        } else {
+            while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $result['summary'] = $row['summary'];
+                $result['temperature'] = $row['temperature'];
+                $result['units'] = $row['units'];
+                $result['icon'] = $row['icon'];
+            }
         }
 
-        while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            $result['summary'] = $row['summary'];
-            $result['temperature'] = $row['temperature'];
-            $result['units'] = $row['units'];
-            $result['icon'] = $row['icon'];
-        }
+        return $result;
 
         $stmt = null;
         $db = null;
@@ -53,8 +59,6 @@ EOF;
         echo "ERROR [". $e->getCode() ."]: ". $e->getMessage();
         die();
     }
-
-    return $result;
 }
 
 $city_mapping = array(
