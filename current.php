@@ -6,7 +6,7 @@ require_once(__DIR__ .'/config.php');
 function getResult($latitude, $longitude)
 {
     global $db_host, $db_user, $db_pass, $db_name, $charset;
-    global $valid_result_ttl;
+    global $valid_result_ttl, $internal_proxy_endpoint;
 
     try {
         $dsn = "mysql:host=$db_host;dbname=$db_name;charset=$charset";
@@ -34,7 +34,7 @@ EOF;
             $stmt = null;
             $db = null;
 
-            $endpoint = "http://10.0.0.10/weather/scripts/dark_sky_proxy.php?latitude=$latitude&longitude=$longitude";
+            $endpoint = $internal_proxy_endpoint ."?latitude=$latitude&longitude=$longitude";
             $api_call_result = file_get_contents($endpoint);
             $api_call_result_json = json_decode($api_call_result);
    
