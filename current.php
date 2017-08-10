@@ -155,7 +155,7 @@ if (isset($city_mapping[$location])) {
                     </div>
                     <div class="col-md-4">
                         <h3>Current weather icon</h3>
-                        <div><?php echo $result['icon'] ?></div>
+                        <div><canvas id="icon1" width="128" height="128" data-icon="<?php echo $result['icon'] ?>"></canvas></div>
                     </div>
                 </div>
             </div>
@@ -170,6 +170,14 @@ if (isset($city_mapping[$location])) {
         <script src="js/jquery.min.js"></script>
         <!-- Bootstrap compiled and minified JavaScript -->
         <script src="js/bootstrap.min.js"></script>
+
+        <!-- Skycons JavaScript -->
+        <script src="js/skycons.js"></script>
+
+        <!-- Main JavaScript -->
         <script src="js/scripts.js"></script>
+
+        <!-- Page JavaScript -->
+        <script src="js/current.js"></script>
     </body>
 </html>

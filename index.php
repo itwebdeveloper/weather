@@ -71,6 +71,8 @@
         <script src="js/jquery.min.js"></script>
         <!-- Bootstrap compiled and minified JavaScript -->
         <script src="js/bootstrap.min.js"></script>
+
+        <!-- Main JavaScript -->
         <script src="js/scripts.js"></script>
     </body>
 </html>
