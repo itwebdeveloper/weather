@@ -10,5 +10,6 @@ CREATE TABLE `results` (
   `units` enum('auto','ca','uk2','us','si') NOT NULL,
   `icon` enum('clear-day','clear-night','rain','snow','sleet','wind','fog','cloudy','partly-cloudy-day','partly-cloudy-night') NOT NULL,
   `created_on` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `latitude` (`latitude`,`longitude`,`created_on`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
