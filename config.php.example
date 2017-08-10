@@ -17,3 +17,6 @@ $db_user = "foouser";
 $db_pass = "abc";
 $db_name = "weather";
 $charset = 'utf8';
+
+$valid_result_ttl = 300; // Consider valid the results retrieved in the last 5 minutes
+$internal_proxy_endpoint = "http://10.0.0.10/weather/scripts/dark_sky_proxy.php";
