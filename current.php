@@ -114,12 +114,12 @@ if (isset($city_mapping[$locality])) {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html">Weather App</a>
+                    <a class="navbar-brand" href="index.php">Weather App</a>
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="index.html">Home page</a></li>
-                        <li class="active"><a href="index.html">Locations</a></li>
+                        <li class="active"><a href="index.php">Home page</a></li>
+                        <li class="active"><a href="index.php">Locations</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>

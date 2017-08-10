@@ -30,12 +30,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html">Weather App</a>
+                    <a class="navbar-brand" href="index.php">Weather App</a>
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="index.html">Home page</a></li>
-                        <li class="active"><a href="index.html">Locations</a></li>
+                        <li class="active"><a href="index.php">Home page</a></li>
+                        <li class="active"><a href="index.php">Locations</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
@@ -51,11 +51,11 @@
                 <div class="row">
                     <div class="col-md-12">
                         <ul>
-                            <li><a href="current.html">London</a></li>
-                            <li><a href="current.html">Paris</a></li>
-                            <li><a href="current.html">New-York</a></li>
-                            <li><a href="current.html">Singapore</a></li>
-                            <li><a href="current.html">Sydney</a></li>
+                            <li><a href="current.php?city=London">London</a></li>
+                            <li><a href="current.php?city=Paris">Paris</a></li>
+                            <li><a href="current.php?city=New-York">New-York</a></li>
+                            <li><a href="current.php?city=Singapore">Singapore</a></li>
+                            <li><a href="current.php?city=Sydney">Sydney</a></li>
                         </ul>
                     </div>
                 </div>
