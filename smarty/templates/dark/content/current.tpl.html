@@ -1,0 +1,25 @@
+        <div class="container">
+            <div class="starter-template">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>Weather App</h1>
+                        <h2>Current weather conditions</h2>
+                        <h3>{$location}</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h3>Current weather summary</h3>
+                        <div>{$result['summary']}</div>
+                    </div>
+                    <div class="col-md-4">
+                        <h3>Current weather temperature</h3>
+                        <div>{$result['temperature']} {$temperature_unit}</div>
+                    </div>
+                    <div class="col-md-4">
+                        <h3>Current weather icon</h3>
+                        <div><canvas id="icon1" width="128" height="128" data-icon="{$result['icon']}"></canvas></div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.container -->
