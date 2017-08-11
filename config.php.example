@@ -46,4 +46,5 @@ $smarty->caching = false;
 $smarty->assign('TEMPLATE_CSS_DIR', TEMPLATE_DIR .'css');
 $smarty->assign('TEMPLATE_JS_DIR', TEMPLATE_DIR .'js');
 $smarty->assign('TEMPLATE_IMAGES_DIR', TEMPLATE_DIR .'images');
+$smarty->assign('TEMPLATE_FONTS_DIR', TEMPLATE_DIR .'fonts');
 $smarty->assign('TEMPLATE_EXT', TEMPLATE_EXT);
