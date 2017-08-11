@@ -1,0 +1,7 @@
+#locations ul {
+    list-style-type: none;
+}
+
+#locations ul li {
+    text-align: left;
+}

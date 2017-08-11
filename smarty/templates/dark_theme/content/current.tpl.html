@@ -1,0 +1,37 @@
+            {if isset($errors.0) }
+                <div class="fullwidth-block">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                Sorry but we were unable to find your location :-(
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {else}
+            <div class="hero" data-bg-image="{$TEMPLATE_IMAGES_DIR}/banner.png">
+                <div class="container"></div>
+            </div>
+            <div class="forecast-table">
+                <div class="container">
+                    <div class="forecast-container">
+                        <div class="today forecast">
+                            <div class="forecast-header">
+                                <div class="day">Weather App</div>
+                                <div class="date">Current conditions</div>
+                            </div> <!-- .forecast-header -->
+                            <div class="forecast-content">
+                                <div class="location">{$location}</div>
+                                <div class="summary">{$result['summary']}</div>
+                                <div class="degree">
+                                    <div class="num">{$result['temperature']}<sup>o</sup>{$temperature_unit}</div>
+                                    <div class="forecast-icon">
+                                        <canvas id="icon1" width="90" height="90" data-icon="{$result['icon']}"></canvas>
+                                    </div>  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            {/if}
+                </div>
+            </div>
