@@ -1,5 +1,5 @@
 <?php
-require_once(__DIR__ .'/../config.php');
+require_once(__DIR__ .'/config.php');
 
 function send_request($curl_request_endpoint)
 {
