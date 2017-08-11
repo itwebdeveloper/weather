@@ -90,9 +90,9 @@ if (isset($city_mapping[$location])) {
 
     if(isset($result['units'])) {
         if ($result['units'] == 'SI') {
-            $temperature_unit = '&deg;C';
+            $temperature_unit = 'C';
         } else {
-            $temperature_unit = '&deg;F';
+            $temperature_unit = 'F';
         }
     }
 
